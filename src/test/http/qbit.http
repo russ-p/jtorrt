@@ -1,0 +1,15 @@
+### Login
+POST {{qbittorrent.baseUrl}}/api/v2/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username = {{qbittorrent.login}} &
+password = {{qbittorrent.password}}
+
+### Get torrents
+GET {{qbittorrent.baseUrl}}/api/v2/torrents/info
+
+### Get torrent properties
+GET {{qbittorrent.baseUrl}}/api/v2/torrents/properties?hash=81af07491915415dad45f87c0c2ae52fae92c06b
+
+### Get sync maindata
+GET {{qbittorrent.baseUrl}}/api/v2/sync/maindata

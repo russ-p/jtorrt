@@ -1,0 +1,178 @@
+{
+  "resources": {
+    "includes": [
+      {"pattern": "sun/nio/cs/StandardCharsets.class"},
+      {"pattern": "sun/nio/cs/ext/ExtendedCharsets.class"},
+      {"pattern": "sun/nio/cs/ext/CharsetMapping.class"},
+      {
+        "pattern": "\\QMETA-INF/helidon/feature-metadata.properties\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/helidon/media-types.properties\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/helidon/serial-config.properties\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.common.configurable.spi.ExecutorServiceSupplierObserver\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.common.context.spi.DataPropagationProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.common.mapper.spi.MapperProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.common.media.type.spi.MediaTypeDetector\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.common.tls.spi.TlsManagerProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.config.spi.ConfigFilter\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.config.spi.ConfigMapperProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.config.spi.ConfigParser\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.health.spi.HealthCheckProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.http.encoding.spi.ContentEncodingProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.http.media.spi.MediaSupportProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.logging.common.spi.LoggingProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.providers.micrometer.spi.SpanContextSupplierProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.spi.MeterRegistryFormatterProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.spi.MeterRegistryLifeCycleListener\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.spi.MetersProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.spi.MetricsFactoryProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.metrics.spi.MetricsProgrammaticConfig\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.security.providers.httpauth.spi.UserStoreService\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.security.spi.SecurityProviderService\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.tracing.spi.TracerProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webclient.spi.DnsResolverProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webclient.spi.HttpClientSpiProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webclient.spi.ProtocolConfigProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webclient.spi.SourceHandlerProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webclient.spi.WebClientServiceProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.http.spi.SinkProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.http1.spi.Http1UpgradeProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.observe.spi.ObserveProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.spi.ProtocolConfigProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.spi.ServerConnectionSelectorProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/io.helidon.webserver.spi.ServerFeatureProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/jakarta.json.spi.JsonProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/java.lang.System$LoggerFinder\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/java.net.spi.InetAddressResolverProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/java.net.spi.URLStreamHandlerProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/org.slf4j.spi.SLF4JServiceProvider\\E"
+      },
+      {
+        "pattern": "\\Qapplication.yaml\\E"
+      },
+      {
+        "pattern": "\\Qconfig-profile.conf\\E"
+      },
+      {
+        "pattern": "\\Qconfig-profile.json\\E"
+      },
+      {
+        "pattern": "\\Qconfig-profile.properties\\E"
+      },
+      {
+        "pattern": "\\Qconfig-profile.yaml\\E"
+      },
+      {
+        "pattern": "\\Qconfig-profile.yml\\E"
+      },
+      {
+        "pattern": "\\Qio/helidon/common/media/type/default-media-types.properties\\E"
+      },
+      {
+        "pattern": "\\Qmeta-config.conf\\E"
+      },
+      {
+        "pattern": "\\Qmeta-config.json\\E"
+      },
+      {
+        "pattern": "\\Qmeta-config.properties\\E"
+      },
+      {
+        "pattern": "\\Qmeta-config.yaml\\E"
+      },
+      {
+        "pattern": "\\Qmeta-config.yml\\E"
+      },
+      {
+        "pattern": "java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfkc.nrm\\E"
+      },
+      {
+        "pattern": "java.base:\\Qjdk/internal/icu/impl/data/icudt72b/uprops.icu\\E"
+      },
+      {
+        "pattern": "java.base:\\Qsun/net/idn/uidna.spp\\E"
+      }
+    ]
+  },
+  "bundles": []
+}

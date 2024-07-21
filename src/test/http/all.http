@@ -1,0 +1,36 @@
+### Set qbittorrent settings
+//@no-log
+PUT {{baseUrl}}/api/clients/qbittorrent
+Content-Type: application/json
+
+{
+  "baseUrl": "{{qbittorrent.baseUrl}}",
+  "login": "{{qbittorrent.login}}",
+  "password": "{{qbittorrent.password}}"
+}
+
+
+### Get metrics
+//@no-log
+GET {{baseUrl}}/observe/metrics?scope=rpc
+
+
+### Set rutracker settings
+//@no-log
+PUT {{baseUrl}}/api/trackers/rutracker
+Content-Type: application/json; charset=UTF-8
+
+{
+  "enabled": true,
+  "cookie": "{{rutracker.cookie}}"
+}
+
+
+### get torrent hash
+//@no-log
+GET {{baseUrl}}/api/trackers/infoHash?url={{rutracker.testUrl}}
+
+
+### get torrent file
+//@no-log
+GET {{baseUrl}}/api/trackers/torrent?url={{rutracker.testUrl}}

@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  host: 0.0.0.0
+  features:
+    
+    security:
+      defaults:
+        authenticate: true
+      web-server:
+        # protected paths on the web server - do not include paths served by Jersey, as those are protected directly
+        paths:
+
+app:
+  # update torrents check
+  update:
+    initial-delay: 1
+    delay: 30
+
+security:
+  config.require-encryption: false
+  properties:
+  providers:
+    - http-basic-auth:
+        realm: "helidon"
+        users:
+          - login: "jack"
+            password: "${CLEAR=password}"
+            roles: [ "user", "admin" ]
+
+
