@@ -5,15 +5,19 @@ import com.github.russp.jtorrt.common.Storage;
 import com.github.russp.jtorrt.common.TorrentMetaData;
 import com.github.russp.jtorrt.common.Tracker;
 import io.helidon.config.Config;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 import java.util.Optional;
 
+@Singleton
 public class TrackerService {
 
 	private final Storage storage;
 	private final RuTracker ruTracker;
 
+	@Inject
 	public TrackerService(Storage storage, Config config) {
 		this.storage = storage;
 		this.ruTracker = new RuTracker(new RuTrackerConfig(

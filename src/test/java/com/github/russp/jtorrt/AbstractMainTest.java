@@ -1,7 +1,11 @@
 package com.github.russp.jtorrt;
 
 
-import com.github.russp.jtorrt.app.JTorrtAppInstance;
+import com.github.russp.jtorrt.app.JTorrtAppWebServerFactory;
+import com.github.russp.jtorrt.app.Routing;
+import com.github.russp.jtorrt.http.ClientFacade;
+import com.github.russp.jtorrt.http.TorrentsFacade;
+import com.github.russp.jtorrt.http.TrackerFacade;
 import io.helidon.http.Status;
 import io.helidon.webclient.api.ClientResponseTyped;
 import io.helidon.webclient.http1.Http1Client;
@@ -14,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.mockito.Mockito.mock;
 
 abstract class AbstractMainTest {
 	private final Http1Client client;
@@ -24,7 +29,8 @@ abstract class AbstractMainTest {
 
 	@SetUpRoute
 	static void routing(HttpRouting.Builder builder) {
-		Main.routing(builder, new JTorrtAppInstance(null, null, null, null, null, null, null, null));
+		new Routing(mock(ClientFacade.class), mock(TorrentsFacade.class), mock(TrackerFacade.class))
+				.accept(builder);
 	}
 
 

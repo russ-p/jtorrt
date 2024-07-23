@@ -10,6 +10,8 @@ import com.github.russp.jtorrt.tracker.TrackerService;
 import com.github.russp.jtorrt.util.Tuple;
 import io.helidon.scheduling.FixedRateInvocation;
 import io.helidon.scheduling.ScheduledConsumer;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,14 +22,17 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+@Singleton
 public class UpdateService implements ScheduledConsumer<FixedRateInvocation> {
 
 	private static final Logger log = LoggerFactory.getLogger(UpdateService.class);
 
-	private final Map<InfoHash, LocalDateTime> lastUpdated = new HashMap<>();
 	private final ClientService clientService;
 	private final TrackerService trackerService;
 
+	private final Map<InfoHash, LocalDateTime> lastUpdated = new HashMap<>();
+
+	@Inject
 	public UpdateService(ClientService clientService, TrackerService trackerService) {
 		this.clientService = clientService;
 		this.trackerService = trackerService;

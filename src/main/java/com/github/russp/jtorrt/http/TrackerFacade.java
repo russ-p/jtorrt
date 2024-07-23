@@ -7,6 +7,8 @@ import io.helidon.webserver.http.HttpRules;
 import io.helidon.webserver.http.HttpService;
 import io.helidon.webserver.http.ServerRequest;
 import io.helidon.webserver.http.ServerResponse;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import jakarta.json.Json;
 import jakarta.json.JsonBuilderFactory;
 import org.slf4j.Logger;
@@ -14,12 +16,14 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
+@Singleton
 public class TrackerFacade implements HttpService {
 	private static final Logger log = LoggerFactory.getLogger(TrackerFacade.class);
 
 	private final TrackerService trackerService;
 	private final JsonBuilderFactory jsonFactory;
 
+	@Inject
 	public TrackerFacade(TrackerService trackerService) {
 		this.trackerService = trackerService;
 		jsonFactory = Json.createBuilderFactory(Map.of());
@@ -27,9 +31,9 @@ public class TrackerFacade implements HttpService {
 
 	@Override
 	public void routing(HttpRules httpRules) {
-		httpRules.put("/rutracker", this::updateRuTracker)
-				.get("/infoHash", this::getInfoHash)
-				.get("/torrent", this::getTorrent);
+		httpRules.put("/trackers/rutracker", this::updateRuTracker)
+				.get("/trackers/infoHash", this::getInfoHash)
+				.get("/trackers/torrent", this::getTorrent);
 	}
 
 	private void getInfoHash(ServerRequest serverRequest, ServerResponse serverResponse) {
