@@ -6,15 +6,19 @@ import com.github.russp.jtorrt.common.Storage;
 import com.github.russp.jtorrt.rpc.qbittorrent.QbittorrentConfig;
 import com.github.russp.jtorrt.rpc.qbittorrent.QbittorrentRpc;
 import io.helidon.config.Config;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 
+@Singleton
 public class ClientService {
 
 	private final Storage storage;
 
 	private QbittorrentRpc qbittorrent;
 
+	@Inject
 	public ClientService(Storage storage, Config config) {
 		this.storage = storage;
 		this.qbittorrent = new QbittorrentRpc(new QbittorrentConfig(
