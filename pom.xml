@@ -177,6 +177,13 @@
             <version>${version.wiremock}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+
+            <groupId>io.avaje</groupId>
+            <artifactId>avaje-inject-test</artifactId>
+            <version>${version.avaje.inject}</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.assertj</groupId>
