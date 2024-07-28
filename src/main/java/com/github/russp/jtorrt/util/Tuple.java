@@ -1,7 +1,5 @@
 package com.github.russp.jtorrt.util;
 
-import com.github.russp.jtorrt.common.InfoHash;
-
 public interface Tuple {
 
 	static <A, B> Pair<A, B> of(A a, B b) {
