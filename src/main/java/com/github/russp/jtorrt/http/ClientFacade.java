@@ -1,6 +1,7 @@
 package com.github.russp.jtorrt.http;
 
 import com.github.russp.jtorrt.rpc.ClientService;
+import io.avaje.jsonb.Json;
 import io.helidon.http.Status;
 import io.helidon.webserver.http.HttpRules;
 import io.helidon.webserver.http.HttpService;
@@ -61,6 +62,7 @@ public class ClientFacade implements HttpService {
 		}
 	}
 
+	@Json
 	public record QBitConfDto(String baseUrl, String login, String password) {
 	}
 

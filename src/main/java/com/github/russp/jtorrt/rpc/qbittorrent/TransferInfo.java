@@ -1,8 +1,8 @@
 package com.github.russp.jtorrt.rpc.qbittorrent;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.avaje.jsonb.Json;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Json
 public record TransferInfo(
 		long dl_info_speed, //	Global download rate (bytes/s)
 		long dl_info_data,  //	Data downloaded this session (bytes)

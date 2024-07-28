@@ -1,19 +1,21 @@
 package com.github.russp.jtorrt.rpc.qbittorrent;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.avaje.jsonb.Json;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-record TorrentInfo(
+import java.math.BigDecimal;
+
+@Json
+public record TorrentInfo(
 		long added_on,
 		long amount_left,
 		boolean auto_tmm,
-		int availability,
+		BigDecimal availability,
 		String category,
 		long completed,
 		long completion_on,
 		String content_path,
-		int dl_limit,
-		int dlspeed,
+		long dl_limit,
+		long dlspeed,
 		String download_path,
 		long downloaded,
 		long downloaded_session,
@@ -21,23 +23,23 @@ record TorrentInfo(
 		boolean f_l_piece_prio,
 		boolean force_start,
 		String hash,
-		int inactive_seeding_time_limit,
+		long inactive_seeding_time_limit,
 		String infohash_v1,
 		String infohash_v2,
 		long last_activity,
 		String magnet_uri,
-		int max_inactive_seeding_time,
+		long max_inactive_seeding_time,
 		double max_ratio,
-		int max_seeding_time,
+		long max_seeding_time,
 		String name,
-		int num_complete,
-		int num_incomplete,
-		int num_leechs,
-		int num_seeds,
-		int priority,
+		long num_complete,
+		long num_incomplete,
+		long num_leechs,
+		long num_seeds,
+		long priority,
 		double progress,
 		double ratio,
-		int ratio_limit,
+		long ratio_limit,
 		String save_path,
 		long seeding_time,
 		long seeding_time_limit,
@@ -54,6 +56,6 @@ record TorrentInfo(
 		int up_limit,
 		long uploaded,
 		long uploaded_session,
-		int upspeed
+		long upspeed
 ) {
 }

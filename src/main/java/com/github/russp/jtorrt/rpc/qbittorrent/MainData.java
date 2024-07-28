@@ -1,22 +1,22 @@
 package com.github.russp.jtorrt.rpc.qbittorrent;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import io.avaje.jsonb.Json;
+
 import java.util.List;
+import java.util.Map;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Json
 public record MainData(
 		long rid,
 		boolean full_update,
-		TorrentsMap torrents,
-		CategoriesMap categories,
-		TagList tags,
+		Map<String, TorrentInfo> torrents,
+		Map<String, Category> categories,
+		List<String> tags,
 		ServerState server_state
 ) {
 
-	@JsonIgnoreProperties(ignoreUnknown = true)
+	@Json
 	public record ServerState(
 			long alltime_dl,
 			long alltime_ul,
@@ -46,18 +46,9 @@ public record MainData(
 	) {
 	}
 
-	@JsonIgnoreProperties(ignoreUnknown = true)
-	public record Category(String name, String savePAth) {
+	@Json
+	public record Category(String name, String savePath) {
 
-	}
-
-	public static class TagList extends ArrayList<String> {
-	}
-
-	public static class CategoriesMap extends HashMap<String, Category> {
-	}
-
-	public static class TorrentsMap extends HashMap<String, TorrentInfo> {
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.github.russp.jtorrt.rpc.qbittorrent;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.avaje.jsonb.Json;
 
 /**
  * A record representing detailed information about a torrent.
@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @param up_speed                 The current upload speed of the torrent in bytes per second.
  * @param isPrivate                True if the torrent is from a private tracker.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Json
 public record TorrentProperties(
 		String save_path,
 		int creation_date,
